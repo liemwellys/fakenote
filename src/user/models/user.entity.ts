@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, BeforeInsert } from 'typeorm';
 
 @Entity()
 export class UserEntity{
@@ -17,4 +17,9 @@ export class UserEntity{
     
     @Column()
     active: number;
+
+    @BeforeInsert()
+    emailToLowerCase(){
+        this.email = this.email.toLowerCase();
+    }
 }
