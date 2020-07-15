@@ -24,9 +24,21 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
+# Fakenote
+a social media dummy made with Nest.
+
 ## Description
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+
+## Dependencies
+
+```bash
+$ npm install --save-dev nodemon
+$ npm install --save @nestjs/typeorm typeorm mysql
+$ npm install @nestjs/jwt --save
+$ npm i bcrypt --save
+```
 
 ## Installation
 
