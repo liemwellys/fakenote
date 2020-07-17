@@ -2,11 +2,12 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { UserEntity } from '../models/user.entity';
 import { Repository } from 'typeorm';
-import { User } from '../models/user.interface';
+import { User, UserRole } from '../models/user.interface';
 import { Observable, from, throwError } from 'rxjs';
 import { switchMap, map, catchError } from 'rxjs/operators';
 import { AuthService } from 'src/auth/service/auth.service';
-import { resourceUsage } from 'process';
+// import { resourceUsage } from 'process';
+import { paginate, Pagination, IPaginationOptions } from 'nestjs-typeorm-paginate';
 
 @Injectable()
 export class UserService {
@@ -23,7 +24,7 @@ export class UserService {
                 newUser.name = user.name;
                 newUser.email = user.email;
                 newUser.password = passwordHash;
-                newUser.role = user.role;
+                newUser.role = UserRole.USER;
                 newUser.active = user.active;
 
                 return from(this.userRepository.save(newUser)).pipe(
@@ -38,15 +39,6 @@ export class UserService {
         // return from(this.userRepository.save(user));
     }
 
-    findAll(): Observable<User[]>{
-        return from(this.userRepository.find()).pipe(
-            map((users) => {
-                users.forEach(function (v) {delete v.password});
-                return users;
-            })
-        );
-    }
-
     findOne(iduser: number): Observable<User> {
         return from(this.userRepository.findOne({iduser})).pipe(
             map((user: User) => {
@@ -57,6 +49,25 @@ export class UserService {
         // return from(this.userRepository.findOne({iduser}));
     }
 
+    findAll(): Observable<User[]>{
+        return from(this.userRepository.find()).pipe(
+            map((users) => {
+                users.forEach(function (v) {delete v.password});
+                return users;
+            })
+        );
+    }
+
+    paginate(options: IPaginationOptions): Observable<Pagination<User>> {
+        return from(paginate<User>(this.userRepository, options)).pipe(
+            map((userPageable: Pagination<User>) => {
+                userPageable.items.forEach(function (v) {delete v.password});
+
+                return userPageable;
+            })
+        )
+    }
+
     deleteOne(iduser: number): Observable<any>{
         return from(this.userRepository.delete(iduser));
     }
@@ -64,6 +75,7 @@ export class UserService {
     updateOne(iduser: number, user: User): Observable<any>{
         delete user.email;
         delete user.password;
+        delete user.role;
 
         return from(this.userRepository.update(iduser, user));
     }
