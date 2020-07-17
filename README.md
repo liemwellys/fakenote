@@ -39,6 +39,7 @@ $ npm install --save @nestjs/typeorm typeorm mysql
 $ npm install @nestjs/jwt --save
 $ npm i bcrypt --save
 $ npm i --save @nestjs/passport passport
+$ npm i nestjs-typeorm-paginate --save
 ```
 
 ## Installation
