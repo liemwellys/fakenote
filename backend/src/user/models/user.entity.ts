@@ -1,5 +1,5 @@
 import { Entity, PrimaryGeneratedColumn, Column, BeforeInsert } from 'typeorm';
-import { UserRole } from './user.interface';
+import { UserRole, Active } from './user.interface';
 
 @Entity()
 export class UserEntity{
@@ -19,8 +19,8 @@ export class UserEntity{
     @Column({type: 'enum', enum: UserRole, default: UserRole.USER})
     role: UserRole;
     
-    @Column()
-    active: number;
+    @Column({type: 'enum', enum: Active, default: Active.ACTIVE})
+    active: Active;
 
     @BeforeInsert()
     emailToLowerCase(){
