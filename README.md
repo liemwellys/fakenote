@@ -33,13 +33,21 @@ a social media dummy made with Nest.
 
 ## Dependencies
 
+### Backend
 ```bash
 $ npm install --save-dev nodemon
 $ npm install --save @nestjs/typeorm typeorm mysql
 $ npm install @nestjs/jwt --save
 $ npm i bcrypt --save
 $ npm i --save @nestjs/passport passport
-$ npm i nestjs-typeorm-paginate --save
+$ npm i nestjs-typeorm-paginate --
+```
+
+### Front-end
+```bash
+$ sudo npm i -g @angular/cli
+$ ng add @angular/material
+$ npm i --save rxjs
 ```
 
 ## Installation
