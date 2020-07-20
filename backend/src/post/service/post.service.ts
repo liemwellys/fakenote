@@ -3,7 +3,6 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { PostEntity } from '../models/post.entity';
 import { Repository } from 'typeorm';
 import { FNPost } from '../models/post.interface';
-// import { User } from 'src/user/models/user.interface'
 import { Observable, from } from 'rxjs';
 
 @Injectable()
@@ -14,7 +13,10 @@ export class PostService {
     ){}
 
     createPost(post: FNPost): Observable<FNPost> {
-        return from(this.postRepository.save(post))
+        const newPost = new PostEntity();
+        newPost.content = post.content;
+        // newPost.userId = Math.floor(Math.random()*10) + 3;
+        return from(this.postRepository.save(newPost))
     }
     
     updatePost(idpost: number, post: FNPost): Observable<any>{
