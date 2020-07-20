@@ -1,5 +1,6 @@
-import { Entity, PrimaryGeneratedColumn, Column, BeforeInsert } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, BeforeInsert, OneToMany } from 'typeorm';
 import { UserRole, Active } from './user.interface';
+import { PostEntity } from 'src/post/models/post.entity';
 
 @Entity()
 export class UserEntity{
@@ -21,6 +22,9 @@ export class UserEntity{
     
     @Column({type: 'enum', enum: Active, default: Active.ACTIVE})
     active: Active;
+
+    @OneToMany(type => PostEntity, post => post.user)
+    post: PostEntity[]
 
     @BeforeInsert()
     emailToLowerCase(){
