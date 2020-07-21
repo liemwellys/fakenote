@@ -23,7 +23,7 @@ export class UserEntity{
     @Column({type: 'enum', enum: Active, default: Active.ACTIVE})
     active: Active;
 
-    @OneToMany(type => PostEntity, post => post.idpost)
+    @OneToMany(type => PostEntity, post => post.userId)
     post: PostEntity[]
 
     @BeforeInsert()

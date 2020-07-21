@@ -17,12 +17,12 @@ export class PostController {
     }
 
     @Put(':idPost')
-    updatePost(@Param('idPost') idPost: string, @Body() post: FNPost): Observable<any>{
-        return this.postService.updatePost(Number(idPost), post);
+    updatePost(@Param('idPost') idpost: string, @Body() post: FNPost): Observable<any>{
+        return this.postService.updatePost(Number(idpost), post);
     }
     
     @Put(':idPost/deactive')
-    deactivePost(@Param('idPost')idPost: string, @Body() post:FNPost): Observable<any>{
-        return this.postService.deactivePost(Number(idPost), post);
+    deactivePost(@Param('idPost')idpost: string, @Body() post:FNPost): Observable<any>{
+        return this.postService.deactivePost(Number(idpost), post);
     }
 }

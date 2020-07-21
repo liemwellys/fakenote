@@ -13,17 +13,24 @@ export class PostService {
     ){}
 
     createPost(post: FNPost): Observable<FNPost> {
-        const newPost = new PostEntity();
-        newPost.content = post.content;
-        // newPost.userId = Math.floor(Math.random()*10) + 3;
-        return from(this.postRepository.save(newPost))
+        // const newPost = new PostEntity();
+        // newPost.content = post.content;
+        // newPost.userId = post.userId;
+        return from(this.postRepository.save(post));
     }
     
     updatePost(idpost: number, post: FNPost): Observable<any>{
+        delete post.userId;
+        delete post.active;
+
         return from(this.postRepository.update(idpost, post));
     }
 
     deactivePost(idpost: number, post: FNPost): Observable<any>{
+        delete post.idpost;
+        delete post.content;  
+        delete post.userId;      
+        
         post.active = 0;
         return from(this.postRepository.update(idpost, post));
     }

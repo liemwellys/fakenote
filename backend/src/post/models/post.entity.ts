@@ -14,9 +14,9 @@ export class PostEntity{
     @Column({type: 'enum', enum: Active, default: Active.ACTIVE})
     active: Active;
 
-    @Column({ name: 'userId', nullable: false })
+    @Column({ name: 'userId', nullable: true })
     userId: number;
-    @ManyToOne(type => UserEntity, user => user.iduser, {nullable: false})
-    @JoinColumn({name: 'user'})
+    @ManyToOne(type => UserEntity, user => user.iduser, {nullable: true})
+    @JoinColumn({name: 'userId'})
     user: UserEntity
 }
