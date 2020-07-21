@@ -1,8 +1,9 @@
-import { Controller, Post, Body, Put, Param, Delete } from '@nestjs/common';
+import { Controller, Post, Body, Put, Param, Delete, Get } from '@nestjs/common';
 import { FriendService } from '../service/friend.service';
 import { Friend } from '../models/friend.interface';
 import { Observable, of } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
+import { FriendEntity } from '../models/friend.entity';
 
 @Controller('friend')
 export class FriendController {
@@ -14,6 +15,11 @@ export class FriendController {
             map((friend: Friend) => friend),
             catchError(err => of({error: err.message}))
         );
+    }
+
+    @Get(':iduser')
+    viewFriendRequest(@Param('iduser') iduser: string): Promise<Friend[]>{
+        return this.friendService.viewFriendRequest(Number(iduser));
     }
 
     @Put(':idfriend')

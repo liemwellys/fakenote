@@ -7,6 +7,5 @@ export interface Friend{
 
 export enum Accepted{
     ACCEPTED = 1,
-    NOTACCEPTED = 0,
+    NOTACCEPTED = 0
 }
-

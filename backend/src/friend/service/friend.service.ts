@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { FriendEntity } from '../models/friend.entity';
-import { Repository } from 'typeorm';
-import { Friend } from '../models/friend.interface';
+import { Repository, getRepository } from 'typeorm';
+import { Friend, Accepted } from '../models/friend.interface';
 import { Observable, from } from 'rxjs';
 
 @Injectable()
@@ -20,8 +20,15 @@ export class FriendService {
         delete friend.userId1;
         delete friend.userId2;
 
-        friend.accepted = 1;
+        friend.accepted = Accepted.ACCEPTED;
         return from(this.friendRepository.update(idfriend, friend));
+    }
+
+    async viewFriendRequest(iduser: number): Promise<Friend[]>{
+        const friendRequest = await getRepository(FriendEntity).find({
+            userId2: iduser 
+        });
+        return friendRequest;
     }
     
     deleteFriend(idfriend: number): Observable<any>{    
