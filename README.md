@@ -25,11 +25,11 @@
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
 # Fakenote
-a social media dummy made with Nest.
+a social media dummy made with Nest & Angular. This project is build based on tutorial by [Thomas Kilb](https://gitlab.com/youtube-public/blog).
 
-## Description
+<!-- ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository. -->
 
 ## Dependencies
 
@@ -41,6 +41,7 @@ $ npm install @nestjs/jwt --save
 $ npm i bcrypt --save
 $ npm i --save @nestjs/passport passport
 $ npm i nestjs-typeorm-paginate --
+$ npm install --save @nestjs/swagger swagger-ui-express
 ```
 
 ### Front-end
@@ -50,26 +51,41 @@ $ ng add @angular/material
 $ npm i --save rxjs
 ```
 
-## Installation
+## Implemented Features
+
+### Backend
+- Basic User Feature: Registration, Login, Add Friend, Delete Friend
+- Dashboard Feature: Create Post, Delete Post, Modify Post, Show Post
+
+### Frontend (with Angular)
+- Register form
+- Login form
+
+<!-- ## Installation
 
 ```bash
 $ npm install
-```
+``` -->
 
 ## Running the app
 
-```bash
-# development
-$ npm run start
+### Backend
 
+```bash
 # watch mode
 $ npm run start:dev
-
-# production mode
-$ npm run start:prod
 ```
+open [localhost:3000/backend](https://localhost:3000/backend) to test that backend server is running
 
-## Test
+### Frontend
+
+```bash
+# run the frontend server
+$ ng serve
+```
+open [localhost:4200/backend](https://localhost:4200) to test that frontend server is running
+
+<!-- ## Test
 
 ```bash
 # unit tests
@@ -79,7 +95,7 @@ $ npm run test
 $ npm run test:e2e
 
 # test coverage
-$ npm run test:cov
+$ npm run test:cov -->
 ```
 
 ## Support
