@@ -29,7 +29,6 @@ export class UserController {
             })
         )
     }
-
     
     @Get(':id')
     findOne(@Param()params): Observable<User>{
