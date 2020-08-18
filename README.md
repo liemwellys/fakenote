@@ -32,6 +32,7 @@ a social media dummy made with Nest & Angular. This project is build based on tu
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository. -->
 
 ## Dependencies
+Execute the following installation command by using command line inside each directory.
 
 ### Backend
 ```bash
