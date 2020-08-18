@@ -37,11 +37,11 @@ a social media dummy made with Nest & Angular. This project is build based on tu
 ```bash
 $ npm install --save-dev nodemon
 $ npm install --save @nestjs/typeorm typeorm mysql
-$ npm install @nestjs/jwt --save
-$ npm i bcrypt --save
-$ npm i --save @nestjs/passport passport
-$ npm i nestjs-typeorm-paginate --
-$ npm install --save @nestjs/swagger swagger-ui-express
+$ npm install @nestjs/jwt --save-dev
+$ npm install bcrypt --save-dev
+$ npm install --save-dev @nestjs/passport passport
+$ npm install nestjs-typeorm-paginate --save-dev
+$ npm install --save-dev @nestjs/swagger swagger-ui-express
 ```
 
 ### Front-end
