@@ -50,6 +50,7 @@ $ npm install --save-dev @nestjs/swagger swagger-ui-express
 $ sudo npm i -g @angular/cli
 $ ng add @angular/material
 $ npm i --save rxjs
+$ npm install @angular/cdk --save
 ```
 
 ## Implemented Features
