@@ -10,9 +10,12 @@ import { PageEvent } from '@angular/material/paginator';
 })
 export class UsersComponent implements OnInit {
   
+  filterValue: string = null;
+  
   dataSource: UserData = null;
 
   pageEvent: PageEvent;
+  
   // set variables that will be displayed on the column
   displayedColumns: string[] = ['id', 'name', 'email', 'role'];
 
@@ -25,7 +28,6 @@ export class UsersComponent implements OnInit {
   initDataSource(){
     // display the first 10 users of all users
     this.userService.findAll(1, 10).pipe(
-      tap(users => console.log(users)),
       map((userData: UserData) => this.dataSource = userData)
     ).subscribe();
   }
@@ -34,16 +36,38 @@ export class UsersComponent implements OnInit {
     let page = event.pageIndex;
     let size = event.pageSize;
 
-    // avoid routing on the page "0"
-    // the next page is current page incremented by 1
-    page = page+1;
+    // if there is no specific user searched:
+    // display all users in the database 
+    if(this.filterValue == null){
+      
+      // avoid routing on the page "0"
+      // the next page is current page incremented by 1
+      page = page + 1;
 
-    // display the "n" users in certain page 
-    // where "n" is the defined limit of displayed users
-    // in a single page 
-    this.userService.findAll(page, size).pipe(
+      // display the "n" users in certain page 
+      // where "n" is the defined limit of displayed users
+      // in a single page 
+      this.userService.findAll(page, size).pipe(
+        map((userData: UserData) => this.dataSource = userData)
+      ).subscribe();
+    }
+    
+    // else: display searched user based on searched name
+    else {
+      this.userService.paginateByName(page, size, this.filterValue).pipe(
+        map((userData: UserData) => this.dataSource = userData)
+      ).subscribe();
+    }
+
+    
+  }
+
+  findByName(name: string) {
+    
+    // find specific user on and display on the first page (page=0)
+    this.userService.paginateByName(0, 10, name).pipe(
       map((userData: UserData) => this.dataSource = userData)
-    ).subscribe();
+    ).subscribe()
   }
 
 }

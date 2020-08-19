@@ -64,6 +64,7 @@ $ npm install @angular/cdk --save
 - Register form
 - Login form
 - Viewing users
+- Real time user search (directly display search result)
 
 <!-- ## Installation
 

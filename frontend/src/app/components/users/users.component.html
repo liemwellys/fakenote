@@ -1,4 +1,9 @@
 <h1 style="text-align: center;">All Users</h1>
+<mat-form-field>
+    <mat-label>Filter by Name</mat-label>
+    <input matInput type="text" [(ngModel)]="filterValue"
+    (input)="findByName(filterValue)" placeholder="Search Name">
+</mat-form-field>
 <div *ngIf="dataSource">
     <!-- get displayed table from dataSource variable -->
     <mat-table [dataSource]="dataSource.items">

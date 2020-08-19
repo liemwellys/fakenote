@@ -33,9 +33,24 @@ export class UserService {
   findAll(page: number, size: number):Observable<UserData> {
     let params = new HttpParams();
 
+    // obtain the page & size parameteres
     params = params.append('page', String(page));
     params = params.append('limit', String(size));
 
+    return this.http.get('/backend/user', {params}).pipe(
+      map((userData: UserData) => userData),
+      catchError(err => throwError(err))
+    )
+  }
+
+  // return specific user 
+  paginateByName(page: number, size: number, name: string): Observable<UserData>{
+    let params = new HttpParams();
+
+    params = params.append('page', String(page));
+    params = params.append('limit', String(size));
+    params = params.append('name', name);
+    
     return this.http.get('/backend/user', {params}).pipe(
       map((userData: UserData) => userData),
       catchError(err => throwError(err))
