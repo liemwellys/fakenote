@@ -58,6 +58,7 @@ $ npm install @angular/cdk --save
 ### Backend
 - Basic User Feature: Registration, Login, Add Friend, Delete Friend
 - Dashboard Feature: Create Post, Delete Post, Modify Post, Show Post
+- Searching specific user based on name on user entity
 
 ### Frontend (with Angular)
 - Register form

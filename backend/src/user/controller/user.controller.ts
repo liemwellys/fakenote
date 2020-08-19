@@ -36,15 +36,29 @@ export class UserController {
     }
 
     @Get()
-    index(@Query('page') page: number = 1, 
-    @Query('limit') limit: number = 10,): Observable<Pagination<User>> {
-        limit = limit > 100 ? 100 : limit;
-        
-        return this.userService.paginate({
-            page: Number(page),
-            limit: Number(limit),
-            route: 'https://localhost:3000/backend/user'
-        });
+    index(
+        @Query('page') page: number = 1,
+        @Query('limit') limit: number = 10,
+        @Query('name') name: string
+        ): Observable<Pagination<User>> {
+            limit = limit > 100 ? 100 : limit;
+
+            // if there is no name searched:
+            // return all users in paginated view
+            if(name === null || name === undefined) {
+                return this.userService.paginate({
+                    page: Number(page),
+                    limit: Number(limit),
+                    route: 'https://localhost:3000/backend/user'
+                });
+            }
+            // else: return searched name in paginated view
+            else {
+                return this.userService.paginateFilterByName(
+                    {page: Number(page), limit: Number(limit), route: 'https://localhost:3000/backend/user'},
+                    {name}
+                )
+            }
     }
 
     @Delete(':id')
