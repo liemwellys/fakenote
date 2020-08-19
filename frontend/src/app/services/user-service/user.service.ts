@@ -29,8 +29,7 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  // return the all users based on size
-  // determined on angular material pagination
+  // return the all users based on determined limit size
   findAll(page: number, size: number):Observable<UserData> {
     let params = new HttpParams();
 

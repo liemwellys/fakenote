@@ -62,6 +62,7 @@ $ npm install @angular/cdk --save
 ### Frontend (with Angular)
 - Register form
 - Login form
+- Viewing users
 
 <!-- ## Installation
 

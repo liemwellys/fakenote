@@ -23,8 +23,7 @@ export class UsersComponent implements OnInit {
   }
 
   initDataSource(){
-    // display all users in pagination
-    // each pagination has maximum 10 records of users
+    // display the first 10 users of all users
     this.userService.findAll(1, 10).pipe(
       tap(users => console.log(users)),
       map((userData: UserData) => this.dataSource = userData)
@@ -36,10 +35,12 @@ export class UsersComponent implements OnInit {
     let size = event.pageSize;
 
     // avoid routing on the page "0"
+    // the next page is current page incremented by 1
     page = page+1;
 
-    // display the next page based on 
-    // defined number of records in a page
+    // display the "n" users in certain page 
+    // where "n" is the defined limit of displayed users
+    // in a single page 
     this.userService.findAll(page, size).pipe(
       map((userData: UserData) => this.dataSource = userData)
     ).subscribe();
