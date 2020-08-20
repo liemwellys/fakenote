@@ -120,7 +120,7 @@ export class UserController {
         )
     }
 
-    // Get user profile picture
+    // display user profile picture
     @Get('profile-image/:imagename')
     findProfileImage(@Param('imagename') imagename, @Res() res): Observable<Object> {
         return of(res.sendFile(join(process.cwd(), 'uploads/profileimages/' + imagename)));
