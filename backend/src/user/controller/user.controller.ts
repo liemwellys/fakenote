@@ -13,6 +13,7 @@ import { diskStorage } from 'multer';
 import { v4 as uuidv4 } from 'uuid';
 import path = require ('path');
 import { extname, join } from 'path';
+import { UserIsUserGuard } from 'src/auth/guard/UserIsUser.guard';
 
 export const storage = {
     // configuration object for saving the file
@@ -96,6 +97,10 @@ export class UserController {
         return this.userService.deleteOne(Number(iduser));
     }
 
+    // update specific user
+    // added guard to make sure that user it self
+    // is the authorized person to update their own profile 
+    @UseGuards(JwtAuthGuard, UserIsUserGuard)
     @Put(':id')
     updateOne(@Param('id') iduser: string, @Body() user: User): Observable<any> {
         return this.userService.updateOne(Number(iduser), user);
