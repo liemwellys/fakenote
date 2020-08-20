@@ -19,6 +19,9 @@ export class UserEntity{
 
     @Column({type: 'enum', enum: UserRole, default: UserRole.USER})
     role: UserRole;
+
+    @Column({nullable: true})
+    profileImage: string;
     
     @Column({type: 'enum', enum: Active, default: Active.ACTIVE})
     active: Active;

@@ -43,6 +43,8 @@ $ npm install bcrypt --save-dev
 $ npm install --save-dev @nestjs/passport passport
 $ npm install nestjs-typeorm-paginate --save-dev
 $ npm install --save-dev @nestjs/swagger swagger-ui-express
+$ npm install @nestjs/platform-express --save
+$ npm install uuid --save
 ```
 
 ### Front-end
