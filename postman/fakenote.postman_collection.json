@@ -1,0 +1,476 @@
+{
+	"info": {
+		"_postman_id": "2e2246b7-679f-48a8-ac64-ba643abe4d45",
+		"name": "fakenote",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "12ed3564-f7fb-426f-8ea3-55999e684539",
+						"exec": [
+							"{",
+							"    \"name\": \"test Welly\";",
+							"    \"email\"",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"name2\",\n    \"email\": \"name2@mail.com\",\n    \"password\": \"name2\",\n    \"role\": \"FNadmin\",\n    \"active\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/user",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkdXNlciI6MiwibmFtZSI6Im5hbWUyIiwiZW1haWwiOiJuYW1lMkBtYWlsLmNvbSIsInJvbGUiOiJGTmFkbWluIiwiYWN0aXZlIjoxfSwiaWF0IjoxNTk0OTEzNzU3LCJleHAiOjE1OTQ5MjM3NTd9.HiUYDA4mloIMldTfV6nfbTzXMaqi8sUrCvStIMcuiPs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/user",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get One User",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/user/3",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete One User",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/user/3",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update One User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkdXNlciI6MywibmFtZSI6Im5hbWUzIiwiZW1haWwiOiJuYW1lM0BtYWlsLmNvbSIsInJvbGUiOiJGTmFkbWluIiwicHJvZmlsZUltYWdlIjpudWxsLCJhY3RpdmUiOjF9LCJpYXQiOjE1OTc5MTgzOTIsImV4cCI6MTU5NzkyODM5Mn0.NU10XXqkfINKipPqIIQrzVlLAxXfk5onI7_L21TLWXA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"name3 changed\",\n    \"email\": \"shouldNotWork\",\n    \"password\": \"shouldNotWork\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/backend/user/2",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"backend",
+						"user",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login One User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"name2@mail.com\",\n    \"password\": \"name2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/user/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Role",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkdXNlciI6MiwibmFtZSI6Im5hbWUyIiwiZW1haWwiOiJuYW1lMkBtYWlsLmNvbSIsInJvbGUiOiJGTmFkbWluIiwiYWN0aXZlIjoxfSwiaWF0IjoxNTk0OTE1MDY0LCJleHAiOjE1OTQ5MjUwNjR9.675Ocdw_qHrHkj9eYx0LP-kAngG_FSfBXF6dWJBTG9g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"role\": \"FNadmina\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/user/6/role",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"6",
+						"role"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a post for user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"content\": \"test4\",\n    \"userId\": 3,\n    \"active\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/backend/post",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"backend",
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User Post",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"content\": \"test2 updated\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/backend/post/2",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"backend",
+						"post",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add friend",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId1\": 3,\n    \"userId2\": 4\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/backend/friend",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"backend",
+						"friend"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "accept friend request",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"accepted\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/backend/friend/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"backend",
+						"friend",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Friend Request",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/backend/friend/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"backend",
+						"friend",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Friend Request based on User ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/backend/friend/4",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"backend",
+						"friend",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search specific registered user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/backend/user?name=name&page=0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"backend",
+						"user"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "name"
+						},
+						{
+							"key": "page",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload Profile Picture (with form-data & jwt)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkdXNlciI6MSwibmFtZSI6Im5hbWUxIiwiZW1haWwiOiJuYW1lMUBtYWlsLmNvbSIsInJvbGUiOiJGTmFkbWluIiwicHJvZmlsZUltYWdlIjoibWljaGFlbC1kYW0tbUVaM1BvRkdzX2stdW5zcGxhc2g3YmQzOTBiNS1lMDkyLTRhYTAtOWYwZS03MjA2ZTIxZWZhY2EuanBnIiwiYWN0aXZlIjoxfSwiaWF0IjoxNTk3OTEzMzE4LCJleHAiOjE1OTc5MjMzMTh9.laKqNKxB3PfAYwlySb7xYuU6mtixzsOru91qmcqjwq4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/home/welly/Downloads/michael-dam-mEZ3PoFGs_k-unsplash.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/backend/user/upload",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"backend",
+						"user",
+						"upload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Download Profile Image",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/backend/user/profile-image/michael-dam-mEZ3PoFGs_k-unsplashcb982432-75fd-4334-a74c-48babea16d2c.jpg",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"backend",
+						"user",
+						"profile-image",
+						"michael-dam-mEZ3PoFGs_k-unsplashcb982432-75fd-4334-a74c-48babea16d2c.jpg"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
