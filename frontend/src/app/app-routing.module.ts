@@ -5,6 +5,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { UsersComponent } from './components/users/users.component';
 import { UpdateUserProfileComponent } from './components/update-user-profile/update-user-profile.component';
 import { AuthGuard } from './guards/auth.guard'
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
 
 const routes: Routes = [
   {
@@ -21,7 +22,16 @@ const routes: Routes = [
   },
   {
     path: 'users',
-    component: UsersComponent
+    children: [
+      {
+        path: '',
+        component: UsersComponent
+      },
+      {
+        path: ':id',
+        component: UserProfileComponent
+      },
+    ]
   },
   {
     path: 'update-profile',

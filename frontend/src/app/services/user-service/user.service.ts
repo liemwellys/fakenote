@@ -29,6 +29,13 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
+  // display user profile based on user ID
+  findOne(id: number): Observable<User> {
+    return this.http.get('/backend/user/' + id).pipe(
+      map((user: User) => user)
+    )
+  }
+
   // return the all users based on determined limit size
   findAll(page: number, size: number):Observable<UserData> {
     let params = new HttpParams();

@@ -15,6 +15,7 @@ export interface User{
   password?: string;
   passwordConfirm?: string;
   role?: string;
+  profileImage?: string;
 };
 
 export const JWT_NAME = 'fakenote-token';

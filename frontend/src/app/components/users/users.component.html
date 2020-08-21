@@ -8,7 +8,7 @@
     <!-- get displayed table from dataSource variable -->
     <mat-table [dataSource]="dataSource.items">
         <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-        <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns" (click)="navigateToProfile(row.iduser)"></mat-row>
 
         <ng-container matColumnDef="id">
             <mat-header-cell *matHeaderCellDef mat-sort-header>Id</mat-header-cell>
