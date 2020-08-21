@@ -49,10 +49,11 @@ $ npm install uuid --save
 
 ### Front-end
 ```bash
-$ sudo npm i -g @angular/cli
+$ sudo npm install -g @angular/cli
 $ ng add @angular/material
-$ npm i --save rxjs
+$ npm install --save rxjs
 $ npm install @angular/cdk --save
+$ npm install @auth0/angular-jwt
 ```
 
 ## Implemented Features
