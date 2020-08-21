@@ -91,7 +91,7 @@ open [localhost:3000/backend](https://localhost:3000/backend) to test that backe
 # run the frontend server
 $ ng serve
 ```
-open [localhost:4200/backend](https://localhost:4200) to test that frontend server is running
+open [localhost:4200](https://localhost:4200) to test that frontend server is running
 
 <!-- ## Test
 
