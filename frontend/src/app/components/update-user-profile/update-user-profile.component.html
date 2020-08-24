@@ -1,1 +1,22 @@
-<h1>is authenticated!</h1>
+<form [formGroup]="form" (ngSubmit)="update()">
+    
+    <div>
+        <mat-card class="container">
+            
+            <mat-form-field>
+                <input matInput placeholder="ID" formControlName="iduser">
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput placeholder="Name" formControlName="name">
+            </mat-form-field>
+
+            <h1>Disclaimer:</h1>
+            <p>Change password & email will be implemented soon, since special logic is needed.</p>
+            <p>Change user's photo will be implemented soon.</p>
+
+            <button mat-flat-button color="primary" [disabled]="!form.valid" type="submit">Update Profile</button>
+        
+        </mat-card>>
+    </div>
+</form>

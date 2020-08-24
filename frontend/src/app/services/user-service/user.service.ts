@@ -33,7 +33,11 @@ export class UserService {
   findOne(id: number): Observable<User> {
     return this.http.get('/backend/user/' + id).pipe(
       map((user: User) => user)
-    )
+    );
+  }
+
+  updateOne(user): Observable<User>{
+    return this.http.put('/backend/user/' + user.id, user);
   }
 
   // return the all users based on determined limit size
