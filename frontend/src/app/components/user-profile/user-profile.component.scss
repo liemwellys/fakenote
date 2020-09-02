@@ -1,17 +1,26 @@
 .header-image{
     background-size: cover;
-    height: 40px;
-    width: 40px;
+    height: 300px;
+    width: 300px;
     border-radius: 50%;
     flex-shrink: 0;
     object-fit: cover;
+    margin: 10px;
 }
 
 .card {
     width: 80%;
-    max-width: 80%;
-    height: 300px;
-    margin-top: 2%;
+    max-width: 70%;
+    height: 450px;
+    margin: 5%;
+}
+
+.content{
+    padding: 20px;
+    
+    .mat-card-title{
+        font-size: xx-large;
+    }
 }
 
 .main-div {
