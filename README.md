@@ -1,4 +1,4 @@
-<p align="center">
+<!-- <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
 </p>
 
@@ -21,11 +21,16 @@
   <a href="https://paypal.me/kamilmysliwiec"><img src="https://img.shields.io/badge/Donate-PayPal-dc3d53.svg"/></a>
   <a href="https://twitter.com/nestframework"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
 </p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+  [![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
+  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor) -->
 
 # Fakenote
 a social media dummy made with Nest & Angular. This project is build based on tutorial by [Thomas Kilb](https://gitlab.com/youtube-public/blog).
+
+<p align="left">
+  <img src="https://nestjs.com/img/logo_text.svg" height="50" alt="Nest Logo"/>
+  <img src="https://angular.io/assets/images/logos/angular/angular.svg" height="55" alt="Angular Logo"/>
+</p>
 
 <!-- ## Description
 
@@ -68,6 +73,7 @@ $ npm install @auth0/angular-jwt
 - Login form
 - Viewing users
 - Real time user search (directly display search result)
+- Simple specific user update
 
 <!-- ## Installation
 
