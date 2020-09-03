@@ -72,8 +72,8 @@ $ npm install @auth0/angular-jwt
 - Register form
 - Login form
 - Viewing users
-- Real time user search (directly display search result)
-- Simple specific user update
+- Real time user search (directly display search result of typed user name)
+- Simple user update (update name of registered user)
 
 <!-- ## Installation
 
