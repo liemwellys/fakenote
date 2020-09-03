@@ -40,6 +40,7 @@ export class UpdateUserProfileComponent implements OnInit {
 
   update(){
     this.userService.updateOne(this.form.getRawValue()).subscribe();
+    alert("update user profile sucessfull");
   }
 
 }
