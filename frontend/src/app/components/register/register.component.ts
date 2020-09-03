@@ -68,6 +68,7 @@ export class RegisterComponent implements OnInit {
     this.authService.register(this.registerForm.value).pipe(
       map(user => this.router.navigate(['login']))
     ).subscribe();
+    alert("You are sucessfully registered!");
   }
 
 }
