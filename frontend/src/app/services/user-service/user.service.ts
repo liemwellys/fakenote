@@ -30,8 +30,8 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   // display user profile based on user ID
-  findOne(id: number): Observable<User> {
-    return this.http.get('/backend/user/' + id).pipe(
+  findOne(iduser: number): Observable<User> {
+    return this.http.get('/backend/user/' + iduser).pipe(
       map((user: User) => user)
     );
   }

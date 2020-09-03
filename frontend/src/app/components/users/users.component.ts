@@ -71,8 +71,8 @@ export class UsersComponent implements OnInit {
     ).subscribe()
   }
 
-  navigateToProfile(id) {
-    this.router.navigate(['./' + id], {relativeTo: this.activatedRoute});
+  navigateToProfile(iduser) {
+    this.router.navigate(['./' + iduser], {relativeTo: this.activatedRoute});
   }
 
 }
