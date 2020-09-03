@@ -37,7 +37,7 @@ export class UserService {
   }
 
   updateOne(user): Observable<User>{
-    return this.http.put('/backend/user/' + user.id, user);
+    return this.http.put('/backend/user/' + user.iduser, user);
   }
 
   // return the all users based on determined limit size
