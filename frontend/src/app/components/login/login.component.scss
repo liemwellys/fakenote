@@ -1,6 +1,3 @@
-body{
-    padding: 20px;
-}
 .main-page{
     padding: 20px;
     display: flex;
@@ -12,17 +9,29 @@ body{
 .container{
     display: flex;
     flex-direction: column;
-    align-items: left;
     justify-content: center;
     padding: 3em 2em;
     margin: 20px 30px;
-    
-    h1{
-        font-size: 40px;
-        font-weight: bold;
-    }
+    width: 20em;
 
-    button{
-        margin-top: 10px;
+    h1{
+        font-weight: bold;
+        margin-left: 0;
+        padding-left: 0;
+        text-align: left;
+        font-size: 2.75em;    
     }
+    
+    p{
+        font-size: 1em;
+    }
+}
+
+.mat-form-field{
+    font-size: large;
+    width: 20em;
+}
+
+button{
+    margin-top: 10px;
 }
